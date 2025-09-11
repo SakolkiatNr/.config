@@ -1,3 +1,5 @@
+export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -29,6 +31,4 @@ alias gs="git status"
 alias gl="git log"
 alias gp="git push"
 
-alias vim="nvim"
-alias vi="nvim"
 

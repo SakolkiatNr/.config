@@ -1,6 +1,7 @@
 vim.o.number = true
 vim.o.relativenumber = true
 vim.opt.shiftwidth = 4
+vim.opt.clipboard = "unnamedplus"
 
 require('config.lazy')
 require('remap')

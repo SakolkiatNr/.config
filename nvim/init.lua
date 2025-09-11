@@ -1,7 +1,17 @@
-print('Greetings! SKK')
-require('remap')
-require('config.lazy')
-
 vim.o.number = true
 vim.o.relativenumber = true
 vim.opt.shiftwidth = 4
+
+require('config.lazy')
+require('remap')
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking text',
+  group = vim.api.nvim_create_augroup('highlight-yank', {clear = true}),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
+
+
+

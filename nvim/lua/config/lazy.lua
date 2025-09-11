@@ -21,7 +21,8 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- colorscheme 
+  
+ -- colorscheme 
      {
        "vague2k/vague.nvim",
        lazy = false, 
@@ -34,10 +35,9 @@ require("lazy").setup({
 	     strings = "none",
 	   },
          })
-	   vim.cmd("colorscheme vague")
+	 vim.cmd("colorscheme vague")
 	 end
      },
-
      { import = "plugins" },
   },
 })

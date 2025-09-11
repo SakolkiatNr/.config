@@ -1,6 +1,9 @@
 .DS_Store
 lazy-lock.json
 .p10k.zsh
-.zcompdump-SKKs-MacBook-5.9
-.zcompdump-SKKs-MacBook-5.9.zwc
-.zsh_history
+
+.zcompdump*
+.zcompdump-*.zwc
+
+zsh/*
+!zsh/.zshrc

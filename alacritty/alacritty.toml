@@ -1,0 +1,30 @@
+[env]
+TERM = "screen-256color"
+
+[window]
+decorations = "none"
+dynamic_padding = true
+
+[font]
+size = 28
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

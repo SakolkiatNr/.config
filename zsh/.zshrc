@@ -3,16 +3,11 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
 plugins=(git)
-plugins=(zsh-syntax-highlighting zsh-autosuggestions)
-
-
+plugins=(zsh-syntax-highlighting)
+plugins=(zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -23,8 +18,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[
-
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+# To customize prompt, run `p10k configure` 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
+
+# git stuffs
+alias ga="git add ."
+alias gc="git commit"
+alias gs="git status"
+alias gl="git log"
+alias gp="git push"
+
+alias vim="nvim"
+alias vi="nvim"
+

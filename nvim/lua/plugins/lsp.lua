@@ -15,7 +15,10 @@ return {
         },
       },
     },
+
+
     config = function()
+      -- Auto complete
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       require("lspconfig").lua_ls.setup { capabilities }
 
@@ -26,7 +29,6 @@ return {
           if not client then return end
 
           -- Auto-format ("lint") on save.
-          -- Usually not needed if server supports "textDocument/willSaveWaitUntil".
           if not client:supports_method('textDocument/willSaveWaitUntil')
               and client:supports_method('textDocument/formatting') then
             vim.api.nvim_create_autocmd('BufWritePre', {

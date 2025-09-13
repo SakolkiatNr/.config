@@ -10,8 +10,9 @@ startup_mode = "Maximized"
 size = 24
 
 [font.normal]
-family = "Hack Nerd Font"
-# family = "Monaspace Neon"
+#family = "Hack Nerd Font"
+#family = "Monaspace Neon"
+family = "FiraCode Nerd Font"
 style = "Regular"
 
 

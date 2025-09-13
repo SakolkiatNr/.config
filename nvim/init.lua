@@ -6,13 +6,16 @@ vim.o.scrolloff = 5
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
+
 
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = 'Open diagnostic' })
+
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>")
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>")
@@ -20,6 +23,10 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 
 vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprev<CR>")
+
+vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags)
+vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
+vim.keymap.set("n", "<space>fb", require('telescope.builtin').buffers)
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd('TextYankPost', {

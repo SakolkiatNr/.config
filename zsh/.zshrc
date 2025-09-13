@@ -15,11 +15,9 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` 
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
-
 # git stuffs
 alias ga="git add ."
 alias gc="git commit"
 alias gs="git status"
 alias gl="git log"
 alias gp="git push"
-

@@ -1,8 +1,10 @@
 [env]
-TERM = "screen-256color"
+TERM = "xterm-256color"
 
 [window]
 dynamic_padding = true
+decorations = "Buttonless"
+startup_mode = "Maximized"
 
 [font]
 size = 28

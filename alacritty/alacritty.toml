@@ -7,10 +7,17 @@ decorations = "Buttonless"
 startup_mode = "Maximized"
 
 [font]
-size = 28
+size = 24
+
+[font.normal]
+family = "Hack Nerd Font"
+# family = "Monaspace Neon"
+style = "Regular"
+
+
 
 [general]
-import = ["~/.config/alacritty/themes/kanagawa/kanagawa_wave.toml"]
+# import = ["~/.config/alacritty/themes/kanagawa/kanagawa_wave.toml"]
 
 
 

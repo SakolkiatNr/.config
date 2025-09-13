@@ -5,10 +5,10 @@ vim.opt.clipboard = "unnamedplus"
 
 
 require('config.lazy')
-require('remap')
 
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
+vim.keymap.set("n", "<leader>pv", "<cmd>Oil<CR>")
 
 -- set alt+j, alt +k for quickfix navigation
 vim.keymap.set("n", "∆", "<cmd>cnext<CR>")

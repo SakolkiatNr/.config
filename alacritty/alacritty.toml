@@ -15,10 +15,11 @@ size = 24
 family = "FiraCode Nerd Font"
 style = "Regular"
 
-
-
 [general]
 # import = ["~/.config/alacritty/themes/kanagawa/kanagawa_wave.toml"]
+
+[colors.primary]
+background = "#000000"
 
 
 

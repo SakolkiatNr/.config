@@ -33,13 +33,16 @@ vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags)
 vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
 vim.keymap.set("n", "<space>fb", require('telescope.builtin').buffers)
 
-
+-- fugitive (git)
+vim.keymap.set("n", "<leader>ga", ":G add .<CR>")
+vim.keymap.set("n", "<leader>gl", ":G log<CR>")
+vim.keymap.set("n", "<leader>gs", ":G status<CR>")
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking text',
-  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = 'Highlight when yanking text',
+    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })

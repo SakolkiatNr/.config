@@ -20,8 +20,6 @@ return {
   },
   {
     "rebelot/kanagawa.nvim",
-    config = function()
-    end
   },
   {
     "thesimonho/kanagawa-paper.nvim",
@@ -34,5 +32,11 @@ return {
     "ellisonleao/gruvbox.nvim",
     priority = 1000,
     config = true,
+  },
+
+  {
+    "webhooked/kanso.nvim",
+    lazy = false,
+    priority = 1000,
   }
 }

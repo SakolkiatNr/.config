@@ -1,4 +1,4 @@
-require('config.lazy')
+-- vim.keymap.set("n", "<space>fb", require('telescope.builtin').buffers)
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -38,6 +38,12 @@ vim.keymap.set("n", "<space>fb", require('telescope.builtin').buffers)
 vim.keymap.set("n", "<leader>ga", ":G add .<CR>")
 vim.keymap.set("n", "<leader>gl", ":G log<CR>")
 vim.keymap.set("n", "<leader>gs", ":G status<CR>")
+
+-- comment
+vim.keymap.set('n', '<leader>/', require("Comment.api").toggle.linewise.current, { desc = "Toggle comment" })
+vim.keymap.set('v', "<leader>/", function()
+    require("Comment.api").toggle.linewise(vim.fn.visualmode(vim.fn.visualmode()))
+end, { desc = "Toggle comments" })
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd('TextYankPost', {

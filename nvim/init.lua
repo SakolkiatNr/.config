@@ -1,4 +1,4 @@
--- vim.keymap.set("n", "<space>fb", require('telescope.builtin').buffers)
+require('config.lazy')
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -42,7 +42,7 @@ vim.keymap.set("n", "<leader>gs", ":G status<CR>")
 -- comment
 vim.keymap.set('n', '<leader>/', require("Comment.api").toggle.linewise.current, { desc = "Toggle comment" })
 vim.keymap.set('v', "<leader>/", function()
-    require("Comment.api").toggle.linewise(vim.fn.visualmode(vim.fn.visualmode()))
+    require("Comment.api").toggle.linewise(vim.fn.visualmode())
 end, { desc = "Toggle comments" })
 
 -- Highlight when yanking (copy) text

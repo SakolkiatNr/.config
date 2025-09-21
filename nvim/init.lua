@@ -41,15 +41,12 @@ vim.keymap.set("n", "<leader>gs", ":G status<CR>")
 
 -- comment
 vim.keymap.set('n', '<leader>/', require("Comment.api").toggle.linewise.current, { desc = "Toggle comment" })
-vim.keymap.set('v', "<leader>/", function()
-    require("Comment.api").toggle.linewise(vim.fn.visualmode())
-end, { desc = "Toggle comments" })
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking text',
-    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  desc = 'Highlight when yanking text',
+  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })

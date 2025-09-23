@@ -2,7 +2,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      'saghen/blink.cmp',
+      "saghen/blink.cmp",
       {
         "folke/lazydev.nvim",
         ft = "lua", -- only load on lua files
@@ -16,23 +16,26 @@ return {
       },
     },
 
-
     config = function()
       -- Auto complete
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
-      require("lspconfig").lua_ls.setup { capabilities }
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      require("lspconfig").lua_ls.setup({ capabilities })
 
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('my.lsp', {}),
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("my.lsp", {}),
         callback = function(args)
           local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-          if not client then return end
+          if not client then
+            return
+          end
 
           -- Auto-format ("lint") on save.
-          if not client:supports_method('textDocument/willSaveWaitUntil')
-              and client:supports_method('textDocument/formatting') then
-            vim.api.nvim_create_autocmd('BufWritePre', {
-              group = vim.api.nvim_create_augroup('my.lsp', { clear = false }),
+          if
+            not client:supports_method("textDocument/willSaveWaitUntil")
+            and client:supports_method("textDocument/formatting")
+          then
+            vim.api.nvim_create_autocmd("BufWritePre", {
+              group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
               buffer = args.buf,
               callback = function()
                 vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
@@ -43,20 +46,20 @@ return {
       })
 
       -- diagnostic
-      vim.diagnostic.config {
+      vim.diagnostic.config({
         severity_sort = true,
-        float = { border = 'rounded', source = 'if_many' },
+        float = { border = "rounded", source = "if_many" },
         underline = { severity = vim.diagnostic.severity.ERROR },
         signs = vim.g.have_nerd_font and {
           text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
+            [vim.diagnostic.severity.ERROR] = "󰅚 ",
+            [vim.diagnostic.severity.WARN] = "󰀪 ",
+            [vim.diagnostic.severity.INFO] = "󰋽 ",
+            [vim.diagnostic.severity.HINT] = "󰌶 ",
           },
         } or {},
         virtual_text = {
-          source = 'if_many',
+          source = "if_many",
           spacing = 2,
           format = function(diagnostic)
             local diagnostic_message = {
@@ -68,7 +71,7 @@ return {
             return diagnostic_message[diagnostic.severity]
           end,
         },
-      }
+      })
     end,
-  }
+  },
 }

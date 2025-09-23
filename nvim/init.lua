@@ -1,5 +1,4 @@
 require("config.lazy")
-
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 5
@@ -9,7 +8,6 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
-
 vim.cmd("colorscheme vague")
 
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")

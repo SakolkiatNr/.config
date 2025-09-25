@@ -1,4 +1,5 @@
 require("config.lazy")
+print("Greeting Sakolkiat")
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.scrolloff = 5

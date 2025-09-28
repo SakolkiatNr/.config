@@ -19,5 +19,5 @@ source $ZSH/oh-my-zsh.sh
 alias ga="git add ."
 alias gc="git commit"
 alias gs="git status"
-alias gl="git log"
+alias gl='git log --graph --pretty=format:"%h %an %ar %n%s%n"'
 alias gp="git push"

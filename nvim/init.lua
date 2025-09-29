@@ -28,10 +28,10 @@ vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprev<CR>")
 
 -- telescope
-vim.keymap.set("n", "<space>ff", ":Telescope<CR>", { desc = "Open Telescope" })
-vim.keymap.set("n", "<space>fh", require("telescope.builtin").help_tags, { desc = "Search help" })
-vim.keymap.set("n", "<space>fd", require("telescope.builtin").find_files, { desc = "Search directories" })
-vim.keymap.set("n", "<space>fb", require("telescope.builtin").buffers, { desc = "Search active buffers" })
+-- vim.keymap.set("n", "<space>ff", ":Telescope<CR>", { desc = "Open Telescope" })
+-- vim.keymap.set("n", "<space>fh", require("telescope.builtin").help_tags, { desc = "Search help" })
+-- vim.keymap.set("n", "<space>fd", require("telescope.builtin").find_files, { desc = "Search directories" })
+-- vim.keymap.set("n", "<space>fb", require("telescope.builtin").buffers, { desc = "Search active buffers" })
 
 -- fugitive (git)
 vim.keymap.set("n", "<leader>ga", ":G add .<CR>", { desc = "Git add ." })
@@ -43,9 +43,9 @@ vim.keymap.set("n", "<leader>/", require("Comment.api").toggle.linewise.current,
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-    desc = "Highlight when yanking text",
-    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-    callback = function()
-        vim.highlight.on_yank()
-    end,
+  desc = "Highlight when yanking text",
+  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })

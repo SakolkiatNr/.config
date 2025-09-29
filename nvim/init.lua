@@ -27,19 +27,16 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 vim.keymap.set("n", "∆", "<cmd>cnext<CR>")
 vim.keymap.set("n", "˚", "<cmd>cprev<CR>")
 
--- fugitive (git)
--- vim.keymap.set("n", "<leader>ga", ":G add .<CR>", { desc = "Git add ." })
--- vim.keymap.set("n", "<leader>gl", ":G log<CR>", { desc = "Git log" })
--- vim.keymap.set("n", "<leader>gs", ":G status<CR>", { desc = "Git status" })
-
 -- comment
 vim.keymap.set("n", "<leader>/", require("Comment.api").toggle.linewise.current, { desc = "Toggle comment" })
 
 -- Highlight when yanking (copy) text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking text",
-  group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = "Highlight when yanking text",
+    group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
+
+require("config.telescope.terminal")

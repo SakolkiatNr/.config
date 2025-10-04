@@ -10,9 +10,9 @@ return {
       require("telescope").setup({
         pickers = {
           find_files = {
-            -- theme = "ivy",
+            theme = "ivy",
             -- theme = "cursor",
-            theme = "dropdown",
+            -- theme = "dropdown",
           },
         },
         extensions = {

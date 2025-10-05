@@ -19,6 +19,14 @@
 	  "description": "Jest test block"
 	},
 
+	"expect": {
+		"prefix": "expect",
+		"body": [
+			"expect(${1:fn}).toBe(${2:});"
+		],
+	  "description": "Jest expect"
+	},
+
 	"expect to be": {
 		"prefix": "expectToBe",
 		"body": [

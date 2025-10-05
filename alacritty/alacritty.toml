@@ -5,6 +5,7 @@ TERM = "xterm-256color"
 dynamic_padding = true
 decorations = "Buttonless"
 startup_mode = "Maximized"
+option_as_alt = "Both"
 
 [font]
 size = 24
@@ -24,20 +25,3 @@ background = "#000000"
 [colors.normal]
 magenta = "0xb3243e"
 cyan 	= "0x7fe5d4"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

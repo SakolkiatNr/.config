@@ -1,0 +1,37 @@
+{
+	"describe": {
+	  "prefix": "describe",
+		"body": [
+		  "describe('${1:description}', () => {",
+			"	${2:fn}",
+			"});"
+		],
+		"description": "Jest describe block"
+	},
+
+	"test": {
+		"prefix": "test",
+		"body": [
+			"test('${1:name}', () => {",
+			"	${2:fn}",
+			"});"
+		],
+	  "description": "Jest test block"
+	},
+
+	"expect to be": {
+		"prefix": "expectToBe",
+		"body": [
+			"expect(${1:fn}).toBe(${2:});"
+		],
+	  "description": "Jest expect toBe"
+	},
+
+	"expect to throw": {
+		"prefix": "expectToThrow",
+		"body": [
+			"expect(${1:fn}).toThrow(${2:value});"
+		],
+	  "description": "Jest expect toThrow"
+	}
+}

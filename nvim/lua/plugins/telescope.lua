@@ -8,11 +8,39 @@ return {
     },
     config = function()
       require("telescope").setup({
+        -- see layout_config
         pickers = {
+
           find_files = {
             theme = "ivy",
             -- theme = "cursor",
             -- theme = "dropdown",
+
+            layout_strategy = "horizontal",
+            sorting_strategy = "ascending",
+            previewer = true,
+            preview_cutoff = 1,
+            -- borderchars = { "", "", "", "", "", "", "", "" },
+
+            layout_config = {
+              prompt_position = "top",
+              height = 100,
+              width = 500,
+              preview_width = 0.5,
+            },
+          },
+
+          buffers = {
+            theme = "ivy",
+            layout_config = {
+              prompt_position = "top",
+              height = 100,
+              width = 500,
+              preview_width = 0.5,
+            },
+            layout_strategy = "horizontal",
+            sorting_strategy = "ascending",
+            previewer = true,
           },
         },
         extensions = {

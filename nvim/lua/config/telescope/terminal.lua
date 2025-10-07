@@ -8,8 +8,8 @@ local state = {
 local function create_floating_win(opts)
   opts = opts or {}
 
-  local width = math.floor(opts.width or vim.o.columns * 0.5)
-  local height = math.floor(opts.height or vim.o.lines * 0.7)
+  local width = math.floor(opts.width or vim.o.columns * 0.6)
+  local height = math.floor(opts.height or vim.o.lines * 0.8)
 
   -- Float center
   local row = math.floor((vim.o.lines - height) / 2)

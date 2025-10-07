@@ -22,7 +22,7 @@
 	"expect": {
 		"prefix": "expect",
 		"body": [
-			"expect(${1:fn}).toBe(${2:});"
+			"expect(${1:fn}).${2:};"
 		],
 	  "description": "Jest expect"
 	},

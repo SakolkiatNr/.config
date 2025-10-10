@@ -30,3 +30,5 @@ vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
 -- quick fix navigation
 vim.keymap.set("n", "<M-n>", "<cmd>lnext<CR>", { desc = "Next diagnostic location" })
 vim.keymap.set("n", "<M-p>", "<cmd>lprev<CR>", { desc = "Previous diagnostic location" })
+vim.keymap.set("n", "<M-n>", "<cmd>cnext<CR>", { desc = "Next quiCk fix" })
+vim.keymap.set("n", "<M-p>", "<cmd>cprev<CR>", { desc = "Previous quiCk fix" })

@@ -2,12 +2,30 @@ local pickers = require("telescope.pickers")
 local finders = require("telescope.finders")
 local make_entry = require("telescope.make_entry")
 local conf = require("telescope.config").values
+local themes = require("telescope.themes")
 
 local M = {}
 
 local live_multigrep = function(opts)
   opts = opts or {}
   opts.cwd = opts.cwd or vim.uv.cwd()
+
+  opts = themes.get_dropdown({
+    cwd = opts.cwd,
+    prompt_title = "Multi Grep",
+    results_title = "Search Results",
+    previewer = true,
+    preview_cutoff = 1,
+    layout_strategy = "horizontal",
+    sorting_strategy = "ascending",
+    borderchars = { "", "", "", "", "", "", "", "" },
+    layout_config = {
+      prompt_position = "top",
+      height = 100,
+      width = 400,
+      preview_width = 0.65,
+    },
+  })
 
   local finder = finders.new_async_job({
     command_generator = function(prompt)
@@ -37,14 +55,14 @@ local live_multigrep = function(opts)
   })
 
   pickers
-    .new(opts, {
-      debounce = 100,
-      prompt_title = "Multi Grep",
-      finder = finder,
-      previewer = conf.grep_previewer(opts),
-      sorter = require("telescope.sorters").empty(),
-    })
-    :find()
+      .new(opts, {
+        debounce = 100,
+        prompt_title = opts.prompt_title,
+        finder = finder,
+        previewer = conf.grep_previewer(opts),
+        sorter = require("telescope.sorters").empty(),
+      })
+      :find()
 end
 
 M.setup = function()

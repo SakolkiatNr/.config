@@ -8,41 +8,61 @@ return {
     },
     config = function()
       require("telescope").setup({
-        -- see layout_config
         pickers = {
 
-          find_files = {
-            theme = "ivy",
-            -- theme = "cursor",
-            -- theme = "dropdown",
-
+          builtin = {
             layout_strategy = "horizontal",
             sorting_strategy = "ascending",
-            previewer = true,
-            preview_cutoff = 1,
-            -- borderchars = { "", "", "", "", "", "", "", "" },
+            borderchars = { "", "", "", "", "", "", "", "" },
+            path_displays = "smart",
 
             layout_config = {
               prompt_position = "top",
               height = 100,
               width = 500,
-              preview_width = 0.5,
+              preview_width = 0.6,
+            },
+          },
+
+          find_files = {
+            layout_strategy = "horizontal",
+            sorting_strategy = "ascending",
+            borderchars = { "", "", "", "", "", "", "", "" },
+            path_displays = "smart",
+
+            layout_config = {
+              prompt_position = "top",
+              height = 100,
+              width = 500,
+              preview_width = 0.6,
             },
           },
 
           buffers = {
-            theme = "ivy",
+            layout_strategy = "horizontal",
+            sorting_strategy = "ascending",
+            borderchars = { "", "", "", "", "", "", "", "" },
+
             layout_config = {
               prompt_position = "top",
               height = 100,
               width = 500,
-              preview_width = 0.5,
+              preview_width = 0.65,
             },
+          },
+
+          help_tags = {
             layout_strategy = "horizontal",
-            sorting_strategy = "ascending",
-            previewer = true,
+            borderchars = { "", "", "", "", "", "", "", "" },
+            layout_config = {
+              prompt_position = "bottom",
+              height = 100,
+              width = 500,
+              preview_width = 0.65,
+            },
           },
         },
+
         extensions = {
           fzf = {},
         },
@@ -50,25 +70,21 @@ return {
 
       require("telescope").load_extension("fzf")
 
-      vim.keymap.set("n", "<leader>ff", ":Telescope<CR>", { desc = "Open Telescope" })
-      vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc = "Search help" })
-      vim.keymap.set("n", "<leader>fd", require("telescope.builtin").find_files, { desc = "Search directories" })
-      vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Search active buffers" })
-      vim.keymap.set("n", "<leader>km", require("telescope.builtin").keymaps, { desc = "Search keymaps" })
-
       -- open ~/.config
       vim.keymap.set("n", "<space>en", function()
         require("telescope.builtin").find_files({
           cwd = vim.fn.stdpath("config"),
+          prompt_title = "Neovim Configuration",
         })
-      end)
+      end, { desc = "Open Neovim configuration" })
 
       -- find
       vim.keymap.set("n", "<space>ep", function()
         require("telescope.builtin").find_files({
           cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy"),
+          prompt_title = "Lazy Plugins",
         })
-      end)
+      end, { desc = "Search Lazy" })
 
       -- close buffer
 

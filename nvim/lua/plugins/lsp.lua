@@ -32,8 +32,8 @@ return {
 
           -- Auto-format ("lint") on save.
           if
-              not client:supports_method("textDocument/willSaveWaitUntil")
-              and client:supports_method("textDocument/formatting")
+            not client:supports_method("textDocument/willSaveWaitUntil")
+            and client:supports_method("textDocument/formatting")
           then
             vim.api.nvim_create_autocmd("BufWritePre", {
               group = vim.api.nvim_create_augroup("my.lsp", { clear = false }),
@@ -45,7 +45,6 @@ return {
           end
         end,
       })
-
       -- diagnostic
       vim.diagnostic.config({
         severity_sort = true,

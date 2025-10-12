@@ -14,10 +14,10 @@ vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
 
--- Colorscheme setting
 vim.cmd("colorscheme vague")
 -- vim.cmd("colorscheme kanagawa-dragon")
 -- vim.cmd("colorscheme gruvbox-material")
+
 
 -- core
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save" })
@@ -46,3 +46,4 @@ vim.keymap.set("n", "<leader>fh", require("telescope.builtin").help_tags, { desc
 vim.keymap.set("n", "<leader>fd", require("telescope.builtin").find_files, { desc = "Search directories" })
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Search active buffers" })
 vim.keymap.set("n", "<leader>km", require("telescope.builtin").keymaps, { desc = "Search keymaps" })
+vim.keymap.set("n", "<leader>cs", require("telescope.builtin").colorscheme, {desc = "Change colorschemes"})

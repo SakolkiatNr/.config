@@ -1,7 +1,8 @@
 require("config.lazy")
-require("config.telescope.terminal")
+require("config.utilities.terminal")
 require("config.telescope.timew")
-require("config.telescope.hlyank")
+require("config.utilities.hlyank")
+require("config.utilities.formatting")
 
 vim.o.number = true
 vim.o.relativenumber = true
@@ -12,7 +13,11 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
+
+-- Colorscheme setting
 vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme kanagawa-dragon")
+-- vim.cmd("colorscheme gruvbox-material")
 
 -- core
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save" })
@@ -20,7 +25,8 @@ vim.keymap.set("n", "<leader>ee", "<cmd>Oil<CR>", { desc = "Explore" })
 vim.keymap.set("n", "<leader><space>x", "<cmd>source %<CR>", { desc = "reload config" })
 vim.keymap.set("n", "<leader>x", ":.lua<CR>", { desc = "Execute current lua command" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics" })
-vim.keymap.set("n", "<leader>bda", ":%bd|e#|bd#<CR>", { desc = "Close all buffers except current buffer" })
+vim.keymap.set("n", "<leader>bda", ":%bd|e#|bd#<CR>", { desc = "Delete all buffers" })
+vim.keymap.set("n", "<leader>ln", ":Format<CR>", { noremap = true, silent = true, desc = "Format current buffer" })
 
 -- window navigation
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>")

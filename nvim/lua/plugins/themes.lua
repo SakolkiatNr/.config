@@ -16,27 +16,30 @@ return {
         },
       })
       vim.cmd(":hi statusline guibg=NONE")
-    end
+    end,
   },
+
   {
     "rebelot/kanagawa.nvim",
   },
+
   {
     "thesimonho/kanagawa-paper.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
+    -- opts = {},
   },
-
   {
-    "ellisonleao/gruvbox.nvim",
-    priority = 1000,
-    config = true,
-  },
-
-  {
-    "webhooked/kanso.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
-  }
+    config = function()
+      vim.g.gruvbox_material_enable_italic = true
+      vim.g.gruvbox_material_background = "hard"
+      -- vim.cmd.colorscheme("gruvbox-material")
+    end,
+  },
+  {
+    "yazeed1s/oh-lucy.nvim",
+  },
 }

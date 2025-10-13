@@ -37,7 +37,9 @@ local function select_category()
                 vim.fn.system("timew start " .. selection[1])
 
                 -- Update tmux every 10 mins
-                vim.fn.system("tmux set-option -g status-interval 600")
+                -- vim.fn.system("tmux set-option -g status-interval 600")
+                -- Update tmux every 5 mins
+                vim.fn.system("tmux set-option -g status-interval 300")
 
                 -- Show category + elapsed time
                 local cmd = string.format(

@@ -61,6 +61,14 @@ return {
               preview_width = 0.65,
             },
           },
+
+          colorscheme = {
+            layout_config = {
+              prompt_position = "top",
+              width = 0.5,
+              height = 0.7,
+            }
+          },
         },
 
         extensions = {

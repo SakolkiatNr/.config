@@ -14,10 +14,11 @@ vim.opt.tabstop = 4
 vim.opt.clipboard = "unnamedplus"
 vim.opt.winborder = "rounded"
 
-vim.cmd("colorscheme vague")
+-- vim.cmd("colorscheme vague")
 -- vim.cmd("colorscheme kanagawa-dragon")
 -- vim.cmd("colorscheme gruvbox-material")
-
+-- vim.cmd("colorscheme bathory")
+vim.cmd("colorscheme thyrfing")
 
 -- core
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save" })
